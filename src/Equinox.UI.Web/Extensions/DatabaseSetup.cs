@@ -15,13 +15,13 @@ namespace Equinox.UI.Web.Extensions
             if (services == null) throw new ArgumentNullException(nameof(services));
 
             services.AddDbContext<ApplicationDbContext>(options =>
-                options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+                options.UseMySql(configuration.GetConnectionString("DefaultConnection")));
 
             services.AddDbContext<EquinoxContext>(options =>
-                options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+                options.UseMySql(configuration.GetConnectionString("DefaultConnection")));
 
             services.AddDbContext<EventStoreSqlContext>(options =>
-                options.UseSqlServer(configuration.GetConnectionString("DefaultConnection")));
+                options.UseMySql(configuration.GetConnectionString("DefaultConnection")));
         }
     }
 }
